@@ -20,7 +20,9 @@ def judge(jobneed,persongender,jobxueli,personxueli):
         return 0    
 
 def genderjudge(jobneed,persongender): #判断性别
-    if '男' or '女' not in jobneed or '男女不限' or '男/女' or '女/男' or '男、女不限' or '性别不限' in jobneed:
+    if '男' or '女' not in jobneed:
+        return 1
+    if '男女不限' or '男/女' or '女/男' or '男、女不限' or '性别不限' in jobneed:
         return 1
     if '，女' or '女,' or'女性' or '性别女' or '性别：女' or '性别:女' or '只招女生' or '女性优先' in jobneed:
         if persongender == '男':
